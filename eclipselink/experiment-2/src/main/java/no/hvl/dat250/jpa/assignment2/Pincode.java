@@ -2,13 +2,17 @@ package no.hvl.dat250.jpa.assignment2;
 
 import javax.persistence.*;
 
-@Entity
+@Entity(name = "Pincode")
 public class Pincode {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private int pincode;
     private int count;
+
+    public Pincode() {
+
+    }
 
     public Long getId() {
         return id;

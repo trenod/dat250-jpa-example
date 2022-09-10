@@ -2,7 +2,7 @@ package no.hvl.dat250.jpa.assignment2;
 
 import javax.persistence.*;
 
-@Entity
+@Entity(name = "CreditCard")
 public class CreditCard {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,6 +18,10 @@ public class CreditCard {
 
     @OneToOne
     private Person owner;
+
+    public CreditCard() {
+
+    }
 
     public int getNumber() { return this.number; }
 
@@ -37,6 +41,12 @@ public class CreditCard {
 
     public Bank getOwningBank() {
         return this.bank;
+    }
+
+    public void setOwningBank(Bank bank) { this.bank = bank; }
+
+    public Person getOwner() {
+        return this.owner;
     }
 
     public void setOwner(Person person) { this.owner = owner; }

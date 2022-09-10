@@ -5,7 +5,7 @@ import java.util.Set;
 
 import no.hvl.dat250.jpa.assignment2.Person;
 
-@Entity
+@Entity(name = "Address")
 public class Address {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -14,6 +14,10 @@ public class Address {
     private String number;
     @OneToMany
     private Set<Person> owners;
+
+    public Address() {
+
+    }
 
     public String getStreet() { return this.street; }
 

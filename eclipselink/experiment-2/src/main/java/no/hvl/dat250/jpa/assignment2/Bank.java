@@ -3,7 +3,7 @@ package no.hvl.dat250.jpa.assignment2;
 import javax.persistence.*;
 import java.util.Set;
 
-@Entity
+@Entity(name = "Bank")
 public class Bank {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -13,6 +13,10 @@ public class Bank {
 
     @OneToMany
     private Set<CreditCard> creditcards;
+
+    public Bank() {
+
+    }
 
     public Long getId() {
         return this.id;
@@ -27,7 +31,7 @@ public class Bank {
     public void setName(String name) {
         this.name = name;
     }
-
+    @CollectionTable
     public Set<CreditCard> getOwnedCards() {
         return this.creditcards;
     }

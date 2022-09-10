@@ -6,7 +6,7 @@ import java.util.Set;
 import no.hvl.dat250.jpa.assignment2.Address;
 import no.hvl.dat250.jpa.assignment2.CreditCard;
 
-@Entity
+@Entity(name = "Person")
 public class Person {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

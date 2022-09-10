@@ -19,36 +19,33 @@ public class Main {
         em.getTransaction().begin();
         Person person = new Person();
         person.setName("Max Mustermann");
+        em.persist(person);
 
-        //should I add persist after each object!?
+        //add persist after each object
 
         Address address = new Address();
         address.setStreet("Inndalsveien");
         address.setNumber("28");
         address.addOwner(person);
+        em.persist(address);
         person.addAddress(address);
 
         CreditCard c1 = new CreditCard();
-
+        c1.setNumber(12345);
+        c1.setBalance(-5000);
+        c1.setLimit(-10000);
 
         CreditCard c2 = new CreditCard();
+        c1.setNumber(123);
+        c1.setBalance(1);
+        c1.setLimit(2000);
 
+        em.persist(c1);
+        em.persist(c2);
 
         person.addCreditCard(c1);
         person.addCreditCard(c2);
-        /*
-        assertThat(person.getCreditCards().size(), is(2));
-        CreditCard firstCard = getCardWithNumber(person, 12345);
-        CreditCard secondCard = getCardWithNumber(person, 123);
 
-        assertThat(firstCard.getNumber(), is(12345));
-        assertThat(firstCard.getBalance(), is(-5000));
-        assertThat(firstCard.getLimit(), is(-10000));
-
-        assertThat(secondCard.getNumber(), is(123));
-        assertThat(secondCard.getBalance(), is(1));
-        assertThat(secondCard.getLimit(), is(2000));
-        */
 
 
         //should I commit() after everything is persisted!?
