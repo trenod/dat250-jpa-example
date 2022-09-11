@@ -6,6 +6,7 @@ import no.hvl.dat250.jpa.assignment2.Person;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
+import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 
 public class Main {
@@ -16,7 +17,9 @@ public class Main {
         EntityManager em = factory.createEntityManager();
 
         // TODO: Persist object world corresponding to the domain model of experiment 2.
-        em.getTransaction().begin();
+        EntityTransaction tx = em.getTransaction();
+        //em.getTransaction().begin();
+        tx.begin();
         Person person = new Person();
         person.setName("Max Mustermann");
         em.persist(person);
@@ -48,7 +51,10 @@ public class Main {
 
 
 
-        //should I commit() after everything is persisted!?
+        //commit() after everything is persisted
+        tx.commit();
+        factory.close();
+        em.close();
 
     }
 }
