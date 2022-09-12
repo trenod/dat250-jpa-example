@@ -13,6 +13,8 @@ public class Address {
     private String street;
     private String number;
     @OneToMany
+    @ManyToOne
+    @JoinColumn(name = "address_person")
     private Set<Person> owners;
 
     public Address() {

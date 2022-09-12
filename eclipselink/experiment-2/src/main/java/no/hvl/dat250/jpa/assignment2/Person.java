@@ -13,9 +13,9 @@ public class Person {
     private Long id;
     private String name;
 
-    @OneToMany
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "address_person")
     private Set<Address> addresses;
-    @OneToMany
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "creditcard")
     private Set<CreditCard> creditcards;
 
     public Person() {

@@ -17,7 +17,8 @@ public class CreditCard {
     @OneToOne
     private Pincode pincode;
 
-    @OneToOne
+    @ManyToOne
+    @JoinColumn(name = "creditcard")
     private Person owner;
 
     public CreditCard() {
