@@ -39,7 +39,7 @@ public class CreditCard {
 
     public Pincode getPincode() { return this.pincode; }
 
-    public void setPincode(Pincode pin) { this.pincode = pincode; }
+    public void setPincode(Pincode pincode) { this.pincode = pincode; }
 
     public Bank getOwningBank() {
         return this.bank;

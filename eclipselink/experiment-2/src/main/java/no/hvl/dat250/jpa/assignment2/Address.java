@@ -12,8 +12,7 @@ public class Address {
     private Long id;
     private String street;
     private String number;
-    @OneToMany
-    @ManyToOne
+    @ManyToMany
     @JoinColumn(name = "address_person")
     private Set<Person> owners;
 
