@@ -11,7 +11,8 @@ public class Bank {
 
     private String name;
 
-    @OneToMany
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "bank")
+    //private CreditCard creditcard;
     private Set<CreditCard> creditcards;
 
     public Bank() {
