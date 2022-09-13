@@ -1,8 +1,6 @@
 package no.hvl.dat250.jpa.assignment2.driver;
 
-import no.hvl.dat250.jpa.assignment2.Address;
-import no.hvl.dat250.jpa.assignment2.CreditCard;
-import no.hvl.dat250.jpa.assignment2.Person;
+import no.hvl.dat250.jpa.assignment2.*;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -48,6 +46,22 @@ public class Main {
 
         person.addCreditCard(c1);
         person.addCreditCard(c2);
+
+        Pincode pincode = new Pincode();
+        pincode.setPincode(123);
+        pincode.setCount(1);
+        em.persist(pincode);
+
+        c1.setPincode(pincode);
+        c2.setPincode(pincode);
+
+        Bank bank = new Bank();
+        bank.setName("Pengebank");
+        em.persist(bank);
+
+        c1.setOwningBank(bank);
+        c2.setOwningBank(bank);
+
 
 
 
