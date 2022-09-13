@@ -13,9 +13,9 @@ public class Person {
     private Long id;
     private String name;
 
-    @ManyToMany(fetch = FetchType.LAZY, mappedBy = "address_person")
+    @ManyToMany(fetch = FetchType.LAZY, targetEntity = Address.class)//mappedBy = "address_person")
     private Set<Address> addresses;
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "creditcard")
+    @OneToMany(fetch = FetchType.LAZY, targetEntity = CreditCard.class)//mappedBy = "creditcard")
     private Set<CreditCard> creditcards;
 
     public Person() {
@@ -35,12 +35,12 @@ public class Person {
         return this.addresses;
     }
 
-    public void addAddress(Address address) { addresses.add(address); }
+    public void setAddresses(Set<Address> addresses) { this.addresses = addresses; }
 
     @CollectionTable
     public Set<CreditCard> getCreditCards() {
         return this.creditcards;
     }
 
-    public void addCreditCard(CreditCard creditcard) { creditcards.add(creditcard); }
+    public void setCreditCards(Set<CreditCard> creditcards) { this.creditcards = creditcards; }
 }

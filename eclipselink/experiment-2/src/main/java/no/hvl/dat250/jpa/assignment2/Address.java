@@ -31,5 +31,5 @@ public class Address {
     @CollectionTable
     public Set<Person> getOwners() { return this.owners; }
 
-    public void addOwner(Person person) { owners.add(person); }
+    public void setOwners(Set<Person> persons) { this.owners = persons; }
 }
