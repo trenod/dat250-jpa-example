@@ -8,12 +8,13 @@ import no.hvl.dat250.jpa.assignment2.Person;
 @Entity(name = "Address")
 public class Address {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String street;
-    private String number;
-    @ManyToMany
-    @JoinColumn(name = "address_person")
+    @Column(name = "number_id")
+    private int number;
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinColumn(name = "owners_id")
     private Set<Person> owners;
 
     public Address() {
@@ -24,9 +25,9 @@ public class Address {
 
     public void setStreet(String street) { this.street = street; }
 
-    public String getNumber() { return this.number; }
+    public int getNumber() { return this.number; }
 
-    public void setNumber(String number) { this.number = number; }
+    public void setNumber(int number) { this.number = number; }
 
     @CollectionTable
     public Set<Person> getOwners() { return this.owners; }

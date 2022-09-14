@@ -5,7 +5,7 @@ import javax.persistence.*;
 @Entity(name = "CreditCard")
 public class CreditCard {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     @ManyToOne
     @JoinColumn(name = "bank_id")

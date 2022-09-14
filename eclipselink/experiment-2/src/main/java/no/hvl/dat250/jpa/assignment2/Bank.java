@@ -6,7 +6,7 @@ import java.util.Set;
 @Entity(name = "Bank")
 public class Bank {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     private String name;

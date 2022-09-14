@@ -9,11 +9,11 @@ import no.hvl.dat250.jpa.assignment2.CreditCard;
 @Entity(name = "Person")
 public class Person {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String name;
 
-    @ManyToMany(fetch = FetchType.LAZY, targetEntity = Address.class)//mappedBy = "address_person")
+    @ManyToMany(fetch = FetchType.LAZY) //targetEntity = Address.class) //mappedBy = "address_person")
     private Set<Address> addresses;
     @OneToMany(fetch = FetchType.LAZY, targetEntity = CreditCard.class)//mappedBy = "creditcard")
     private Set<CreditCard> creditcards;

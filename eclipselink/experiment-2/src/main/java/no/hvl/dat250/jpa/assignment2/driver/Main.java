@@ -25,7 +25,7 @@ public class Main {
 
         Address address = new Address();
         address.setStreet("Inndalsveien");
-        address.setNumber("28");
+        address.setNumber(28);
         Set<Person> owners = new HashSet<>();
         owners.add(person);
         address.setOwners(owners);
@@ -40,9 +40,10 @@ public class Main {
         c1.setOwner(person);
 
         CreditCard c2 = new CreditCard();
-        c1.setNumber(123);
-        c1.setBalance(1);
-        c1.setLimit(2000);
+        c2.setNumber(123);
+        c2.setBalance(1);
+        c2.setLimit(2000);
+        c2.setOwner(person);
 
         Set<CreditCard> creditcards = new HashSet<>();
         creditcards.add(c1);
@@ -50,7 +51,7 @@ public class Main {
         person.setCreditCards(creditcards);
 
         Pincode pincode = new Pincode();
-        pincode.setPincode(123);
+        pincode.setPincode("123");
         pincode.setCount(1);
         c1.setPincode(pincode);
         c2.setPincode(pincode);
@@ -71,7 +72,6 @@ public class Main {
         //commit() after everything is persisted
         tx.commit();
         factory.close();
-        em.close();
 
     }
 }
