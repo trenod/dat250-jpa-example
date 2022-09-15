@@ -1,9 +1,9 @@
-## dat250-jpa-examples
+### dat250-jpa-examples
 
 This repository contains two maven projects which should be used as a starting point for experiment 1 and 2 of assignment 2.
 
 
-# Experience with the project
+## Experience with the project
 
 
 # technical problems that you encountered during installation and use of Java Persistence Architecture (JPA) and how you resolved them
