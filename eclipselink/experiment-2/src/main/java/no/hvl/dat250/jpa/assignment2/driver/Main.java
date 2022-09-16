@@ -58,6 +58,7 @@ public class Main {
 
         Bank bank = new Bank();
         bank.setName("Pengebank");
+        bank.setOwnedCards(creditcards);
         c1.setOwningBank(bank);
         c2.setOwningBank(bank);
 

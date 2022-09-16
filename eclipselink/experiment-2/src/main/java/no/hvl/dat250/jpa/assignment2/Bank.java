@@ -11,7 +11,7 @@ public class Bank {
 
     private String name;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "bank")
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "bank") //"bank"
     //private CreditCard creditcard;
     private Set<CreditCard> creditcards;
 
@@ -37,7 +37,7 @@ public class Bank {
         return this.creditcards;
     }
 
-    public void addOwnedCard(CreditCard creditcard) {
-        this.creditcards.add(creditcard);
+    public void setOwnedCards(Set<CreditCard> creditcards) {
+        this.creditcards = creditcards;
     }
 }
