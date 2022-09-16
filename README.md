@@ -22,3 +22,7 @@ I used the database link to the far right in IntelliJ, selected visualization an
 
 There are no pending, unresolved issues with this assignment that I didn't solve.
 
+UPDATE: There WAS apparently an unrecognized error which was not discovered in my own testing, but found by the grader after my first submission. The test passed on all tries on my computer, but apparently if I deleted the database, the test failed on the first try and passed on all subsequent attempts. It seems that on the first try it failed because the creditcards weren't added correctly to the bank object. Then with subsequent tests it passed because the creditcards were then implicitly added to the database through other objects. At least that's my hypothesis. 
+
+Anyway, correcting the setOwnedCards method in Bank, and adding them correctly in Main fixed this as far as I can tell. The test now runs on the first try also after deleting the database, which it didn't before.
+
