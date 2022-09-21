@@ -2,7 +2,7 @@
 # Technical problems that you encountered during installation and use of MongoDB and how you resolved
 
 
-# Screenshots for:
+## Screenshots for:
 
         The correct validation of the installation package (https://docs.mongodb.com/manual/tutorial/verify-mongodb-packages/):
         
@@ -16,8 +16,8 @@
         
         
 
-# Reason about why your implemented Map-reduce operation in Experiment 2 is useful and interpret the collection obtained.
+## Reason about why your implemented Map-reduce operation in Experiment 2 is useful and interpret the collection obtained.
 
 
 
-# Any pending issues with this assignment which you did not manage to solve
+## Any pending issues with this assignment which you did not manage to solve
