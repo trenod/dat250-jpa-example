@@ -7,7 +7,8 @@ Due to just having installed Windows 11 on a new laptop and being inexperienced 
 
 The correct validation of the installation package (https://docs.mongodb.com/manual/tutorial/verify-mongodb-packages/):
 
-![](image.pnghttps://github.com/trenod/dat250-jpa-example/blob/master/verify.png)
+
+![](https://github.com/trenod/dat250-jpa-example/blob/master/verify.png)
         
 Relevant results obtained during Experiment 1 (it is not necessary to put a single screenshot on each substep, but at least one significant from each CRUD operation):
 
